@@ -20,7 +20,7 @@ The output is recorded as JUnit xml.
 ## Known problems
 There are two known problems with the default setup:
 
-1. The karma-openui5 plugin does not run the mockserver correctly. This may result in 
+- The karma-openui5 plugin does not run the mockserver correctly. This may result in 
 ```
 Uncaught ReferenceError: module is not defined
 at /node_modules/karma-openui5/lib/mockserver.js:7
@@ -34,5 +34,5 @@ if (typeof module === undefined){
 
 [See Bug report](https://github.com/SAP/karma-openui5/pull/2)
 
-2. The OpenUI5 bower packages seems to have [a problem](https://github.com/SAP/openui5/issues/765)
+- The OpenUI5 bower packages seems to have [a problem](https://github.com/SAP/openui5/issues/765)
 As a workaround you can replace bower_components/resource/sap-ui-core.js with the unpackaged version from the [SDK download] (http://openui5.org/download.html) and everything works fine. 
