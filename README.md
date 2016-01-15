@@ -17,22 +17,7 @@ You can run the sample by checking out and then execute:
 The Karma runner is configured in karma.conf.js. The sample uses a mockserver and runs QUnit and opa tests automatically in Chrome. 
 The output is recorded as JUnit xml.
 
-## Known problems
-There are two known problems with the default setup:
-
-- The karma-openui5 plugin does not run the mockserver correctly. This may result in 
-```
-Uncaught ReferenceError: module is not defined
-at /node_modules/karma-openui5/lib/mockserver.js:7
-```
-To temporary fix it, modify node_modules/karma-openui5/lib/mockserver.js by adding
-```javascript
-if (typeof module === undefined){
-  var module = undefined;
-}
-```
-
-[See Bug report](https://github.com/SAP/karma-openui5/pull/2)
-
-- The OpenUI5 bower packages seems to have [a problem](https://github.com/SAP/openui5/issues/765)
-As a workaround you can replace bower_components/resource/sap-ui-core.js with the unpackaged version from the [SDK download] (http://openui5.org/download.html) and everything works fine. 
+## Note
+- In the order of the declared frameworks in karma.conf.js is important it is important that openui5 is listed before qunit, 
+otherwise the mockserver is not working correctly.
+- Make sure in the *.qunit.js wrappers for automated test the test modules are included using sap.ui.require 

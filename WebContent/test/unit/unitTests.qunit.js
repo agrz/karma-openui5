@@ -1,4 +1,4 @@
-sap.ui.define([
+sap.ui.require([
 	"test/unit/allTests",
 
 ], function() { 

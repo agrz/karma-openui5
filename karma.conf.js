@@ -1,7 +1,7 @@
 module.exports = function(config) {
     config.set({
         basePath: '',
-        frameworks: ['qunit', 'openui5'],
+        frameworks: ['openui5','qunit'],
         files: [{
             pattern: 'bower_components/openui5-sap.ui.core/resources/**/*',
             served: true,
